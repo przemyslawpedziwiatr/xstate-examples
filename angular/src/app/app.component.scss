@@ -1,0 +1,18 @@
+.wrapper {
+    display: flex;
+    height: 100%;
+}
+
+nav {
+    background: #18bded;
+    flex-basis: 10%;
+    padding: 1rem;
+}
+
+.main{
+    margin: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}

@@ -1,0 +1,4 @@
+<div class="pump" (mousedown)="isPressed = true" (mouseup)="isPressed = false">
+    <img src="assets/pump_up.png" *ngIf="isPressed == false"/>
+    <img src="assets/pump_down.png" *ngIf="isPressed == true"/>
+</div>
