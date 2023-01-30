@@ -5,3 +5,23 @@ body, html {
     margin: 0;
     height: 100%;
 }
+
+button {
+    cursor: pointer;
+    font-weight: 600;
+    background-color: #05F2C7;
+    color: #2E0259;
+    border: none;
+    border-radius: 3px;
+    padding: 0.5rem 0.75rem;
+    font-size: 14px;
+    box-shadow: 0px 1px 2px 0px #000;
+}
+
+button:hover {
+    background-color: hsl(169deg 97% 57%);
+}
+
+button:active {
+    box-shadow: inset 0px 1px 2px 2px hsl(169deg 85% 28%);
+}

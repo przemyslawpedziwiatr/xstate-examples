@@ -1,0 +1,33 @@
+.wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+}
+
+.pump {
+    width: 141px;
+    height: 317px;
+    cursor: pointer;
+}
+
+.baloon {
+    transform-origin: bottom center;
+    margin-left: 1rem;
+    transform: scale(0.9);
+}
+
+.baloon-empty {
+    transform: scale(0.15);
+}
+
+.actions {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: stretch;
+    justify-content: stretch;
+}
+
+.actions button {
+    cursor: pointer;
+}

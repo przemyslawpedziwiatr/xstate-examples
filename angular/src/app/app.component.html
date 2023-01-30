@@ -1,6 +1,51 @@
 <div class="wrapper">
   <nav class="navigation">
-    <button>Test</button>
+    <H1>xState</H1>
+    <div class="nav-button">
+      <button [routerLink]="'state-transition'">Pump baloon</button>
+      <p>State</p>
+      <p>Transition</p>  
+      <p>Initial state</p>  
+      <p>Final state</p>  
+    </div>
+
+    <div class="nav-button">
+      <button [routerLink]="'context'">Pump with value</button>
+      <p>Context</p>
+    </div>
+
+    <div class="nav-button">
+      <button [routerLink]="'context'">Safe pumping</button>
+      <p>Guard</p>
+      <p>Delays</p>  
+    </div>
+
+    <div class="nav-button">
+      <button [routerLink]="'context'">Side effects pumping</button>
+      <p>Entry actions</p>
+      <p>Exit actions</p>  
+    </div>
+
+    <div class="nav-button">
+      <button [routerLink]="'context'">API based baloons</button>
+      <p>Services</p>
+    </div>
+
+    <div class="nav-button">
+      <button [routerLink]="'context'">Power pumping</button>
+      <p>Parallel states</p>
+    </div>
+
+    <div class="nav-button">
+      <button [routerLink]="'context'">Reality based pumping</button>
+      <p>Always state</p>
+    </div>
+
+    <div class="nav-button">
+      <button [routerLink]="'context'">Pumpinator 3000</button>
+      <p>Actors</p>  
+    </div>
+
   </nav>
   <div class="main">
     <router-outlet></router-outlet>
