@@ -9,7 +9,7 @@ If `ng` complains about wrong Node version, please use NVM (Node Version Manager
 ## What's inside?
 This repository consists multiple examples that works as a showcase of xState capabilities.
 
-The most interesting part is contained within `src/xstate` directory - multiple examples covering many different features of xState and statecharts.
+The most interesting part is contained within [`src/app/xstate`](https://github.com/przemyslawpedziwiatr/xstate-examples/tree/main/src/app/xstate) directory - multiple examples covering many different features of xState and statecharts.
 
 ## What is covered?
 ### States
