@@ -1,6 +1,5 @@
 .wrapper {
     display: flex;
-    height: 100%;
 }
 
 h1 {
@@ -14,6 +13,8 @@ nav {
     background: #0554F2;
     flex-basis: 20%;
     padding: 1rem;
+    height: auto;
+    margin: 1rem;
 }
 
 .main{
@@ -22,11 +23,6 @@ nav {
     align-items: center;
     width: 100%;
     background: #05DBF2;
-}
-
-.some-xstate-iframe {
-    flex: 0.75;
-    height: 100%;
 }
 
 .nav-button {

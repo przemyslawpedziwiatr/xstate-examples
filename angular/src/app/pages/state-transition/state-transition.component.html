@@ -9,7 +9,7 @@
     }"/>
 
     <div class="actions">
-        <button (click)="machine.send('Deflate')">Deflate</button>
+        <button *ngIf="state.value !== 'Pumped And Tied'" (click)="machine.send('Deflate')">Deflate</button>
         <button (click)="machine.send('Tie')">Tie</button>
     </div>
 </div>

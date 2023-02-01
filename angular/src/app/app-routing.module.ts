@@ -1,6 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ActorComponent } from './pages/actor/actor.component';
+import { AlwaysComponent } from './pages/always/always.component';
 import { ContextCompoundComponent } from './pages/context-compound/context-compound.component';
+import { GuardDelayComponent } from './pages/guard-delay/guard-delay.component';
+import { ServicesComponent } from './pages/services/services.component';
 import { StateTransitionComponent } from './pages/state-transition/state-transition.component';
 
 const routes: Routes = [{
@@ -13,27 +17,19 @@ const routes: Routes = [{
   },
   {
     path: 'guard-delay',
-    component: ContextCompoundComponent
-  },
-  {
-    path: 'entry-exit',
-    component: ContextCompoundComponent
+    component: GuardDelayComponent
   },
   {
     path: 'services',
-    component: ContextCompoundComponent
-  },
-  {
-    path: 'parallel',
-    component: ContextCompoundComponent
+    component: ServicesComponent
   },
   {
     path: 'always',
-    component: ContextCompoundComponent
+    component: AlwaysComponent
   },
   {
     path: 'actor',
-    component: ContextCompoundComponent
+    component: ActorComponent
   },
 ];
 

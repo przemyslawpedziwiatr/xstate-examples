@@ -1,1 +1,15 @@
-<p>context-compound works!</p>
+<div class="wrapper" *ngIf="state$ | async as state">
+    <div class="pump" (click)="machine.send('Pump')" >
+        <img src="assets/pump_up.png" *ngIf="state.event.type !== 'Pump'"/>
+        <img src="assets/pump_down.png" *ngIf="state.event.type === 'Pump'"/>    
+    </div>
+
+    <img src="assets/baloon.png" class="baloon" [ngClass]="{ 
+        'baloon-empty': state.value === 'Empty'
+    }" [style.transform]="'scale('+state.context.airLevel+')'"/>
+
+    <div class="actions">
+        <button *ngIf="state.value !== 'Pumped And Tied'" (click)="machine.send('Deflate')">Deflate</button>
+        <button (click)="machine.send('Tie')">Tie</button>
+    </div>
+</div>

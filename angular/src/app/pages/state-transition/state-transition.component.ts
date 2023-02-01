@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { from, startWith } from 'rxjs';
 import { stateTransitionMachine } from 'src/app/xstate/state-transition.xstate';
 import { interpret } from 'xstate';
@@ -22,4 +22,5 @@ export class StateTransitionComponent {
   sendPump() {
     this.machine.send('Pump');
   } 
+
 }

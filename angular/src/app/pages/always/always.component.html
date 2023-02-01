@@ -1,1 +1,17 @@
-<p>always works!</p>
+<div class="wrapper" *ngIf="state$ | async as state">
+    <div class="pump" (click)="machine.send('PRESS')" *ngIf="pumpState$ | async as pumpState" >
+        <img src="assets/pump_up.png" *ngIf="pumpState === 'Released'"/>
+        <img src="assets/pump_down.png" *ngIf="pumpState === 'Pressed'"/>    
+    </div>
+
+    <img src="assets/baloon.png" class="baloon" *ngLet="baloonState$ | async as ballonState" [ngClass]="{ 
+        'baloon-empty': ballonState === 'Empty',
+        'baloon-shake': ballonState === 'Overfilled'
+    }" [style.transform]="'scale('+state.context.airLevel+')'"/>
+
+    <div class="actions">
+        <button (click)="machine.send('Attach')" *ngIf="state.can('Attach')">Attach Pump</button>
+        <button *ngIf="state.can('Deflate')" (click)="machine.send('Deflate')">Deflate</button>
+        <button *ngIf="state.can('Tie')" (click)="machine.send('Tie')">Tie</button>
+    </div>
+</div>

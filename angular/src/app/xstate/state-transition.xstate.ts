@@ -11,15 +11,13 @@ createMachine({
         Pump: "Fully Pumped"
       }
     },
-
     "Fully Pumped": {
       on: {
         Deflate: "Empty",
-        Tie: "All Pumped"
+        Tie: "Pumped And Tied"
       }
     },
-
-    "All Pumped": {
+    "Pumped And Tied": {
       type: "final"
     }
   }

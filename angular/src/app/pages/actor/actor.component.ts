@@ -1,15 +1,23 @@
 import { Component, OnInit } from '@angular/core';
+import { finalize, from, map, startWith, tap } from 'rxjs';
+import { actorStateMachine } from 'src/app/xstate/actor.xstate';
+import { interpret } from 'xstate';
 
 @Component({
   selector: 'app-actor',
   templateUrl: './actor.component.html',
-  styleUrls: ['./actor.component.scss']
+  styleUrls: ['../../../assets/scene-elements.scss','./actor.component.scss']
 })
-export class ActorComponent implements OnInit {
+export class ActorComponent {
+  machine = interpret(actorStateMachine, {
+    devTools: true
+  }).start();
 
-  constructor() { }
+  state$ = from(this.machine).pipe(
+    startWith(this.machine.getSnapshot()),
+  )
 
-  ngOnInit(): void {
+  ballonMachines$ = from(this.machine).pipe(
+    map((machine) => Object.values(machine.children)),
+  );
   }
-
-}

@@ -1,1 +1,39 @@
-<p>actor works!</p>
+<div class="wrapper" *ngIf="state$ | async as state">
+    <div class="pump-super">
+        <div (click)="machine.send('PRESS')">
+            <img src="assets/super_pump_pressed.png" *ngIf="state.value === 'Pressed'"/>
+            <img src="assets/super_pump_released.png" *ngIf="state.value === 'Released'"/>    
+        </div>
+        <button (click)="machine.send('ADD_ACTOR')">Add Baloon Machine</button>
+    </div>
+
+    <div class="pump-wrapper">
+        <ng-container *ngFor="let baloonActor of ballonMachines$ | async">
+            <div class="baloon-actor"  *ngLet="baloonActor.getSnapshot() as baloonActorState">
+                <div class="pump" (click)="baloonActor.send('PRESS')">
+                    <img src="assets/pump_up.png" *ngIf="baloonActorState?.value?.Attached?.PumpDevice === 'Released'"/>
+                    <img src="assets/pump_down.png" *ngIf="baloonActorState?.value?.Attached?.PumpDevice === 'Pressed'"/>    
+                </div>
+        
+                <img src="assets/baloon.png" class="baloon" [ngClass]="{ 
+                    'baloon-empty': baloonActorState?.value?.Attached?.Baloon === 'Empty',
+                    'baloon-shake': baloonActorState?.value?.Attached?.Baloon === 'Overfilled'
+                }" 
+                [style.filter]="'hue-rotate('+baloonActorState.context.color+'deg)'"
+                [style.transform]="'scale('+baloonActorState.context.airLevel+')'"/>
+        
+                
+                <div class="actions">
+                    <button *ngIf="baloonActorState.can('CHANGE_BALOON')" 
+                        (click)="baloonActor.send('CHANGE_BALOON')">Fetch Baloon Color</button>
+                    <button  *ngIf="baloonActorState.can('ATTACH')" 
+                        (click)="baloonActor.send('ATTACH')">Attach Pump</button>
+                    <button *ngIf="baloonActorState.can('DEFLATE')" (click)="baloonActor.send('DEFLATE')">Deflate</button>
+                    <button *ngIf="baloonActorState.can('TIE')" (click)="baloonActor.send('TIE')">Tie</button>
+                </div>    
+            </div>
+        </ng-container>
+    
+    </div>
+   
+</div>

@@ -1,0 +1,41 @@
+.wrapper {
+    align-items: start;
+    margin-top: 1rem;
+}
+
+.baloon {
+    transform: scale(0.05);
+}
+
+.pump-super {
+    display: flex;
+    flex-direction: column;
+    width: 150px;
+    gap: 5px;
+    background: #0554f2;
+    border-radius: 5px;
+    padding: 1rem;
+    cursor: pointer;
+
+    & img {
+        width: 145px;
+        height: 345px;
+    }
+}
+
+.pump-wrapper {
+    display: flex;
+    margin-left: 1rem;
+    flex-direction: column;
+}
+
+.baloon-actor {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background: hsl(184deg 100% 63%);
+    border-radius: 5px;
+    padding: 2rem;
+    margin-bottom: 1rem;
+}
